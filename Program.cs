@@ -8,10 +8,6 @@ using static LinQ.List;
 
 namespace LinQ
 {
-
-
-
-
     public class Program
     {
         List<Fruit> fruits = new List<Fruit>() {
@@ -32,83 +28,75 @@ namespace LinQ
             var fruitInDescendingOrder = program.fruits.OrderByDescending(Fruit => Fruit.Name);
             Console.WriteLine();
 
-            Console.WriteLine("*******DescendingOrder********");
+            Console.WriteLine("DescendingOrder");
 
             foreach (var f in fruitInDescendingOrder)
             {
                 Console.WriteLine(f.Name);
 
             }
-            Console.WriteLine();
+            Console.WriteLine("");
 
-            Console.WriteLine("*******ascendingorder********");
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("Ascendingorder");
+          
             //ascendingorder
-            Console.WriteLine();
+            Console.WriteLine("");
             var fruitInOrder = program.fruits.OrderBy(Fruit => Fruit.Name);
             foreach (var f in fruitInOrder)
             {
                 Console.WriteLine(f.Name);
             }
-            Console.WriteLine();
+            
 
-            Console.WriteLine("*******color Green&Red********");
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("Color Green&Red");
+        
+            Console.WriteLine("");
             //green&red fruit
-            Console.WriteLine();
+            
             var fruitwithcolor = program.fruits.Where(Fruit => Fruit.Color == Color.Red || Fruit.Color == Color.Green);
             foreach (var f in fruitwithcolor)
             {
                 Console.WriteLine(f.Name);
             }
             //cheapest fruit
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("*******cheapest********");
-            Console.WriteLine();
-            Console.WriteLine();
+         
+            Console.WriteLine("");
+            Console.WriteLine("Cheapest");
+           
             var mybudget = 30;
             var cheapestfruit = program.fruits.Where(Fruit => Fruit.Price <= mybudget);
             foreach (var f in cheapestfruit)
             {
                 Console.WriteLine(f.Name);
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("*******Expensive********");
-            Console.WriteLine();
-            Console.WriteLine();
+     
+            Console.WriteLine("");
+            Console.WriteLine("Expensive");
+         
             var greaterthan = 40;
             var Costlyest = program.fruits.Where(Fruit => Fruit.Price > greaterthan);
             foreach (var f in Costlyest)
             {
                 Console.WriteLine(f.Name);
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("*******under40********");
-            Console.WriteLine();
-            Console.WriteLine();
+        
+            Console.WriteLine("");
+            Console.WriteLine("Under40");
+           
             var budget = 40;
             var mybudgetfruit = program.fruits.Where(Fruit => Fruit.Price <= budget);
             foreach (var f in mybudgetfruit)
             {
                 Console.WriteLine(f.Name);
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("*******NumberofRedfruit********");
-            Console.WriteLine();
-            Console.WriteLine();
+           
+            Console.WriteLine("NumberofRedfruit");
+           
             var redfruit = program.fruits.Count(Fruit => Fruit.Color == Color.Red);
             Console.WriteLine(redfruit);
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("*******fruitWithcolor********");
-            Console.WriteLine();
-            Console.WriteLine();
+            
+            Console.WriteLine("FruitWithcolor");
+         
             var fruitwithcolor1 = program.fruits.GroupBy(Fruit => Fruit.Color);
 
             foreach (var Group in fruitwithcolor1)
